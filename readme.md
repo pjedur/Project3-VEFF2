@@ -16,4 +16,4 @@ Install dependencies using the following commands:
 
 Check out src/components/sellers, it contains most/all of the files you will
 need for that particular component. Other components will have similar files
-as well (most of them!)
+as well (most of them!)"#Project 3 - Webprogramming course in Reykjavik University" 
