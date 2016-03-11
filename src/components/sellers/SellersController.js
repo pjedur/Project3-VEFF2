@@ -7,12 +7,6 @@ function SellersController($scope, AppResource, $location) {
 	// add/update sellers etc.
 	$scope.user = "";
 
-
-	$scope.userInfo = function() {
-		console.log("USER: " + $scope.user);
-		$location.path("/#/seller/" + $scope.user);
-	}
-
 	AppResource.getSellers().success(function(sellers) {
 		$scope.sellers = sellers;
 	}).error(function() {
