@@ -4,8 +4,23 @@
 	<title>WEPO Assignment 3 - Online Web Store</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="styles/vendor.css">
-	<link rel="stylesheet" href="styles/app.css">
+
+	<script type="text/javascript" src="vendor/angular/angular.js"> </script>
+	<script type="text/javascript" src="vendor/angular-route/angular-route.js"> </script>
+	<link rel="stylesheet" type="text/css" href="vendor/angular-bootstrap/ui-bootstrap-csp.css"> </script>
+	<script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"> </script>
+	<script type="text/javascript" src="vendor/angular-toastr/dist/angular-toastr.tpls.js"></script>
+	<script type="text/css" src="vendor/angular-toastr/dist/angular-toastr.css"></script>
+
+	<script type="text/javascript" src="shared/app.js"></script>
+	<script type="text/javascript" src="app.js"> </script>
+	<script type="text/javascript" src="components/resource/AppResource.js"></script>
+	<script type="text/javascript" src="components/sellers/SellersController.js"> </script>
+
+	<script type="text/html" src="components/sellers/index.html"> </script>
+
+	<!-- <link rel="stylesheet" href="styles/vendor.css"> -->
+	<!-- <link rel="stylesheet" href="styles/app.css"> -->
 </head>
 
 	<main class="container-fluid">
@@ -16,8 +31,14 @@
 	<!-- inject:vendor:js -->
 	<!-- endinject -->
 
+
 	<!-- inject:app:js -->
 	<!-- endinject -->
+
+		<div ng-view>
+
+		</div>
+
 
 	<!-- inject:templates:js -->
 	<!-- endinject -->
