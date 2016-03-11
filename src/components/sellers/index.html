@@ -1,1 +1,18 @@
-<div> Hér ætti að birtast listi af seljendum - TODO: útfæra það!</div>
+<h3> Sellers </h3>
+<div>
+  <button> Add new seller </button>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>
+        <span> Sellers </span> <!-- translate="sellers.Name" -->
+        <span> Category </span> <!-- translate="sellers.Category" -->
+      </th>
+      <tr ng-repeat="seller in sellers">
+        <td> {{seller.name}} </td>
+        <td> {{seller.category}} </td>
+      </tr>
+    </tr>
+  </thead>
+</table>
