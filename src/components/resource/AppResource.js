@@ -79,7 +79,7 @@ function AppResource() {
 					fn(data);
 				}
 				return {
-					error: function f() {
+					error: function (f) {
 						if (!condition) {
 							f();
 						}
@@ -130,6 +130,7 @@ function AppResource() {
 		},
 
 		getSellerDetails: function(id) {
+			id = parseInt(id);
 			var seller;
 			for (var i = 0; i < mockSellers.length; ++i) {
 				if (mockSellers[i].id === id) {
@@ -146,6 +147,7 @@ function AppResource() {
 		},
 
 		getSellerProducts: function getSellerProducts(id) {
+			id = parseInt(id);
 			var products = [];
 			for (var i = 0; i < mockProducts.length; ++i) {
 				if (mockProducts[i].id === id) {

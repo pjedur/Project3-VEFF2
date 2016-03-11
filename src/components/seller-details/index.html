@@ -1,4 +1,30 @@
-<h3> USER INFO <h3>
+<h3> User id : {{userID}} </h3>
 <div>
-  {{message}}
+  <button> Add new seller </button>
 </div>
+
+<div>
+  <div ng-if="errorMessage">
+    ErrorMessage: {{errorMessage}}
+  </div>
+  <img src="{{sellerDetails.imagePath}}"
+    <div>
+       {{sellerDetails.name}} {{sellerDetails.category}} {{sellerDetails.imagePath}}
+    </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th> <span> Products </span> <!-- translate="sellers.Name" --> </th>
+      <th> <span> Top 10 </span> <!-- translate="sellers.Category" --> </th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="product in sellerProducts">
+        <td> <a href="#"> {{product.name}} </a> </td>
+        <td> <a href="#"> {{product.price}} </a> </td>
+        <td> <a href="#"> {{product.imagePath}} </a> </td>
+      </tr>
+    </tbody>
+</table>
