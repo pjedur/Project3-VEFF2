@@ -9,7 +9,7 @@
   </div>
   <img src="{{sellerDetails.imagePath}}"
     <div>
-       {{sellerDetails.name}} {{sellerDetails.category}} {{sellerDetails.imagePath}}
+       {{sellerDetails.name}} {{sellerDetails.category}}
     </div>
 </div>
 
@@ -24,7 +24,7 @@
       <tr ng-repeat="product in sellerProducts">
         <td> <a href="#"> {{product.name}} </a> </td>
         <td> <a href="#"> {{product.price}} </a> </td>
-        <td> <a href="#"> {{product.imagePath}} </a> </td>
+        <td> <img src="{{product.imagePath}}" /> </td>
       </tr>
     </tbody>
 </table>

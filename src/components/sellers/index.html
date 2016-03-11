@@ -1,6 +1,7 @@
 <h3> Sellers </h3>
+<div ng-if="errorMessage"> {{errorMessage}}</div>
 <div>
-  <button type="button" class="btn btn-default" ng-click=""> Add new seller </button>
+  <button type="button" class="btn btn-default" ng-click="addSeller()"> Add new seller </button>
 </div>
 
 <table>
@@ -16,7 +17,7 @@
     <tbody>
       <tr ng-repeat="seller in sellers">
       <!--  <td ng-model="user" ng-click="userInfo"> {{seller.name}} </td> -->
-        <td> <a href="seller/{{seller.name}}"> {{seller.name}} </a> </td>
+        <td> <a href="seller/{{seller.id}}"> {{seller.name}} </a> </td>
         <td> {{seller.category}} </td>
       </tr>
     </tbody>
