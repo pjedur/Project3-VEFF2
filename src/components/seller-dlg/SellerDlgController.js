@@ -1,23 +1,23 @@
-// todo
-angular.module("project3App").controller("SellerDlgController", {
-  function SellerDlgController($scope) {
-      $scope.seller = {
-          name: "Herbert Guðmundsson",
-          category: "Bækur",
-          imagePath: ""
-      };
+"use strict";
 
-      $scope.onOk = function onOk() {
+angular.module("project3App").controller("SellerDlgController",
+    function SellerDlgController($scope) {
+        $scope.seller = {
+            name: "Herbert Guðmundsson",
+            category: "Bækur",
+            imagePath: ""
+        };
 
-          if ($scope.seller.name.length === 0) {
+        $scope.onOk = function onOk() {
 
-              return;
-          }
-          $scope.$close($scope.seller);
-      };
+            if ($scope.seller.name.length === 0) {
 
-      $scope.onCancel = function onCancel() {
-          $scope.$dismiss();
-      }
-    }
-});
+                return;
+            }
+            $scope.$close($scope.seller);
+        };
+
+        $scope.onCancel = function onCancel() {
+            $scope.$dismiss();
+        };
+    });
