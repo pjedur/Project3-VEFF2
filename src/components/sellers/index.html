@@ -2,16 +2,22 @@
 <div>
   <button> Add new seller </button>
 </div>
+
 <table>
   <thead>
     <tr>
       <th>
         <span> Sellers </span> <!-- translate="sellers.Name" -->
-        <span> Category </span> <!-- translate="sellers.Category" -->
+
       </th>
+      <th> <span> Category </span> <!-- translate="sellers.Category" --> </th>
+    </tr>
+    </thead>
+    <tbody>
       <tr ng-repeat="seller in sellers">
-        <td> {{seller.name}} </td>
+      <!--  <td ng-model="user" ng-click="userInfo"> {{seller.name}} </td> -->
+        <td> <a href="seller/{{seller.name}}"> {{seller.name}} </a> </td>
         <td> {{seller.category}} </td>
       </tr>
-  </thead>
+    </tbody>
 </table>
