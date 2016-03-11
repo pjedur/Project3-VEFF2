@@ -1,14 +1,10 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDlgController",
-    function SellerDlgController($scope) {
-        $scope.seller = {
-            name: "Herbert Guðmundsson",
-            category: "Bækur",
-            imagePath: ""
-        };
+    function SellerDlgController($scope, seller) {
+        $scope.seller = seller;
 
-        $scope.onOk = function onOk() {
+        $scope.onOk = function onOk(seller) {
 
             if ($scope.seller.name.length === 0) {
 

@@ -1,20 +1,20 @@
-<div ng-controller="SellerDlgController">
-    <script type="text/ng-template" id="Seller-dlg.html">
+<div>
         <div class="modal-header">
             <h3 class="modal-title">Im a modal!</h3>
         </div>
         <div class="modal-body">
-            <input>Name</input>
-            <input>Category</input>
-            <input>Image</input>
+          <form class="form-horizontal modal-body">
+            <input type="text" ng-model="seller.name">Name</input>
+            <input type="text" ng-model="seller.category">Category</input>
+            <input type="text" ng-model="seller.imagePath">Image</input>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="onOk()">OK</button>
+            <button class="btn btn-primary" type="button" ng-click="onOk(seller)">OK</button>
             <button class="btn btn-warning" type="button" ng-click="onCancel()">Cancel</button>
         </div>
-    </script>
 
+        <div class="modal-footer">
     <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
-  
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+    <div>
+  </form>
 </div>
