@@ -1,17 +1,12 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDlgController",
-    function SellerDlgController($scope) {
-        $scope.seller = {};
-        /*
-        $scope.seller.name = "";
-        $scope.seller.category = "";
-        $scope.imagePath = ""; */
+    function SellerDlgController($scope, modalParam) {
+
+        $scope.seller = modalParam.seller;
 
         $scope.onOk = function onOk() {
-
             if ($scope.seller.name.length === 0) {
-
                 return;
             }
             $scope.$close($scope.seller);

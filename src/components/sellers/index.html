@@ -19,9 +19,13 @@
     </thead>
     <tbody>
       <tr ng-repeat="seller in sellers">
-      <!--  <td ng-model="user" ng-click="userInfo"> {{seller.name}} </td> -->
-        <td> <a href="seller/{{seller.id}}"> {{seller.name}} </a> </td>
-        <td> {{seller.category}} </td>
+
+        <td>
+          <a href="seller/{{seller.id}}"> {{seller.name}} </a>
+        </td>
+        <td> {{seller.category}}
+        <button type="button" class="btn btn-default" ng-click="editSeller(seller)"> Edit </button>
+        </td>
       </tr>
     </tbody>
 </table>

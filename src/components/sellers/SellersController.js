@@ -13,6 +13,7 @@ function SellersController($scope, AppResource, $location, SellerDlg) {
 		$scope.sellers = sellers;
 	}).error(function() {
 		$scope.errorMessage = "Could not get sellers";
+		//centris notify
 	});
 
 
@@ -26,6 +27,18 @@ function SellersController($scope, AppResource, $location, SellerDlg) {
 				$scope.errorMessage = "Could not add seller";
 				// centris notify
 			});
+		});
+	}
+
+
+	$scope.editSeller = function editSeller(seller) {
+		SellerDlg.show(seller).then(function() {
+			AppResource.updateSeller(parseInt(seller.id), seller).success(function(data) {
+					console.log("changed seller now -> " + data);
+			}).error(function() {
+				console.log("could not update seller ");
+				//centrisnotify
+			})
 		});
 	}
 
