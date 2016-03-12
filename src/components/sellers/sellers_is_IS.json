@@ -1,7 +1,9 @@
 {
 	"sellers" : {
 		"Title":                     "Seljendur",
+		"Category":										"Flokkur",
 		"Name":                      "Nafn",
+		"Edit":											"Breyta",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",

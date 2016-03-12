@@ -11,10 +11,11 @@
   <thead class="thead-inverse">
     <tr>
       <th>
-        <span> Sellers </span> <!-- translate="sellers.Name" -->
+        <span translate="Sellers.Title"/> <!-- translate="sellers.Name" -->
 
       </th>
-      <th> <span> Category </span> <!-- translate="sellers.Category" --> </th>
+      <th> <span translate="Sellers.Category"/>  <!-- translate="sellers.Category" --> </th>
+      <th><span translate="Sellers.Edit"/></th>
     </tr>
     </thead>
     <tbody>
@@ -24,7 +25,9 @@
           <a href="seller/{{seller.id}}"> {{seller.name}} </a>
         </td>
         <td> {{seller.category}}
-        <button type="button" class="btn btn-default" ng-click="editSeller(seller)"> Edit </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-default" ng-click="editSeller(seller)"> Edit </button>
         </td>
       </tr>
     </tbody>

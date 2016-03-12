@@ -1,0 +1,13 @@
+{
+	"sellerdetails" : {
+		"Product":                     "Product name",
+		"Price":                      "Price",
+		"Image":											"Image",
+		"Add":												"Add",
+		"Messages" : {
+			"LoadFailed":            "Failed to load the list of products",
+			"SaveSucceeded":         "The product has been added successfully",
+			"SaveFailed":            "Unfortunately we could not add a new product"
+		}
+	}
+}
