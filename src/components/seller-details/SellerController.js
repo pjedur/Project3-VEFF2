@@ -4,6 +4,7 @@ angular.module("project3App").controller("SellerController",
 function SellerController($scope, AppResource, $routeParams, $location, ProductDlg) {
 
   $scope.userID = $routeParams.sellerID;
+  $scope.message = "HAHAHGA";
 
 
   AppResource.getSellerDetails($scope.userID).success(function(data) {
@@ -25,6 +26,7 @@ function SellerController($scope, AppResource, $routeParams, $location, ProductD
         $scope.sellerProducts.push(data);
         }).error(function() {
           $scope.errorMessage = "Could not add product";
+          //centrisnotify !!!!
         });
       });
   };
@@ -35,8 +37,11 @@ function SellerController($scope, AppResource, $routeParams, $location, ProductD
         console.log("updated product!");
       }).error(function() {
         console.log("error updating product");
-      });
-    });
-  };
 
-});
+      });
+
+        //centris notify !!
+      })
+
+    });
+  });
