@@ -1,7 +1,7 @@
 "use strict";
 
-angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices"])
-.config(function ($routeProvider, $locationProvider) {
+angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices", "pascalprecht.translate"])
+.config(function ($routeProvider, $locationProvider, $translateProvider) {
 	$routeProvider.when("/", {
 		controller: "SellersController",
 		templateUrl: "components/sellers/index.html"
@@ -14,13 +14,13 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices"])
 	  enabled: true,
 	  requireBase: false
 	});
-	/*
+
 	$translateProvider.useStaticFilesLoader({
 		prefix: "lang_",
 		suffix: ".json"
 	});
 
 	$translateProvider.use("is");
-*/
+
 
 });

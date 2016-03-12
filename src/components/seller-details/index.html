@@ -1,7 +1,7 @@
 <h3> User id : {{userID}} </h3>
 <div ng-if="errorMessage"> {{errorMessage}}</div>
 <div>
-  <button type="button" class="btn btn-default" ng-click="addProduct()"> Add new product </button>
+  <button type="button" class="btn btn-default" ng-click="addProduct()" translate="sellerdetails.Add"> </button>
 </div>
 
 <div>
@@ -19,9 +19,9 @@
     <table class="table table-hover">
       <thead class="thead-inverse">
         <tr>
-          <th> <span> Product name </span> <!-- translate="sellers.Name" --> </th>
-          <th> <span> Price </span> <!-- translate="sellers.Category" --> </th>
-          <th> <span> Image </span> <!-- translate="sellers.Category" --> </th>
+          <th> <span translate="sellerdetails.Product"/><!-- translate="sellers.Name" --> </th>
+          <th> <span translate="sellerdetails.Price"/><!-- translate="sellers.Category" --> </th>
+          <th> <span translate="sellerdetails.Image"/><!-- translate="sellers.Category" --> </th>
         </tr>
         </thead>
         <tbody>
