@@ -1,0 +1,25 @@
+<div>
+        <div class="modal-header">
+            <h2 class="form-control-header">Add new product</h2>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal modal-body">
+            <label for="modalName" class="sr-only"></label>
+            <input type="text" id="modalName" class="form-control" placeholder="Name" ng-model="product.name"/>
+            <br>
+            <label for="modalPrice" class="sr-only"></label>
+            <input type="text" id="modalPrice" class="form-control" placeholder="Price" ng-model="product.price"/>
+            <br>
+            <label for="modalImage" class="sr-only"></label>
+            <input type="text" id="modalImage" class="form-control" placeholder="Image path" ng-model="product.imagePath"/>
+            <br>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-lg btn-primary form-control-button" type="submit" ng-click="onOk()">OK</button>
+            <button class="btn btn-lg btn-danger" type="button" ng-click="onCancel()">Cancel</button>
+        </div>
+
+        <div class="modal-footer">
+    <div>
+  </form>
+</div>

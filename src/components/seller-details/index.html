@@ -1,6 +1,7 @@
 <h3> User id : {{userID}} </h3>
+<div ng-if="errorMessage"> {{errorMessage}}</div>
 <div>
-  <button> Add new seller </button>
+  <button type="button" class="btn btn-default" ng-click="addProduct()"> Add new product </button>
 </div>
 
 <div>
