@@ -8,7 +8,7 @@
   <div ng-if="errorMessage">
     ErrorMessage: {{errorMessage}}
   </div>
-  <img src="{{sellerDetails.imagePath}}"
+  <img src="{{sellerDetails.imagePath}}"height="102" width="132"/>
     <div>
        {{sellerDetails.name}} {{sellerDetails.category}}
     </div>
@@ -25,7 +25,7 @@
       <tr ng-repeat="product in sellerProducts">
         <td> <a href="#"> {{product.name}} </a> </td>
         <td> <a href="#"> {{product.price}} </a> </td>
-        <td> <img src="{{product.imagePath}}" /> </td>
+        <td> <img src="{{product.imagePath}}" height="72" width="92"/> </td>
       </tr>
     </tbody>
 </table>
