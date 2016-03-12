@@ -2,7 +2,13 @@
 
 angular.module("project3App").controller("ProductDlgController",
     function ProductDlgController($scope) {
-        $scope.product = {};
+        $scope.product = {
+          name: "",
+          price: "",
+          quantitySold: "",
+          quantityInStock: "",
+          imagePath: ""
+        };
 
         $scope.onOk = function onOk() {
 

@@ -22,7 +22,8 @@ function SellerController($scope, AppResource, $routeParams, $location, ProductD
   $scope.addProduct = function addProduct() {
       ProductDlg.show().then(function(product) {
         AppResource.addSellerProduct(parseInt($scope.userID), product).success(function(data) {
-          $scope.newProduct = data;
+        //  $scope.newProduct = data;
+        $scope.sellerProducts.push(data);
         }).error(function() {
           $scope.errorMessage = "Could not add product";
         });
