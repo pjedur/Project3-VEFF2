@@ -31,12 +31,13 @@ module.exports = function(config) {
       'src/shared/**/*.js',
       'src/app.js',
       'src/components/**/*.js'
+      'src/vendor/lodash/dist/lodash.min.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      
+
     ],
 
 
