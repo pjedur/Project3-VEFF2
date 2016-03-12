@@ -10,7 +10,7 @@ angular.module("project3App").factory("SellerDlg",
                     resolve: {
                       modalParam: function() {
                         return {
-                          seller:seller
+                          seller: seller
                         }
                       }
                     }

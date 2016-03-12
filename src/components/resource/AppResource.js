@@ -173,16 +173,26 @@ function AppResource() {
 						id: seller.id,
 						product: product
 					});
-					console.log("Added product with sellerID: " + seller.id);
-					console.log("And productID: " + product.id)
 				}
 			}
 
 			return mockHttpPromise(success, product);
+		},
+
+		updateProduct: function(id, product) {
+			if(mockResource.successUpdateSellerProduct) {
+				var current = _.find(mockProducts, function(p) { return (p.id === id && p.product.id === product.id) });
+				if(current !== null) {
+					current.product.name = product.name,
+					current.product.price = product.price,
+					current.product.quantitySold = product.quantitySold,
+					current.product.quantityInStock = product.quantityInStock,
+					current.product.imagePath = product.imagePath
+				}
+			}
+			return mockHttpPromise(mockResource.successUpdateSellerProduct, current);
 		}
 
-		// TODO: the updateProduct() function is left as an exercise to
-		// the reader...
 	};
 
 	return mockResource;

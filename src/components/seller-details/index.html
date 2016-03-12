@@ -26,7 +26,19 @@
         </thead>
         <tbody>
           <tr ng-repeat="product in sellerProducts">
-            <products></products>
+            <!-- <products></products> -->
+            <td>
+              {{product.name}}
+            </td>
+            <td>
+              {{product.price}}
+            </td>
+            <td>
+              {{product.imagePath}}
+            </td>
+            <td>
+              <button type="button" class="btn btn-default" ng-click="editProduct(product)"> Edit</button>
+            </td>
           </tr>
         </tbody>
     </table>

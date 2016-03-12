@@ -29,4 +29,14 @@ function SellerController($scope, AppResource, $routeParams, $location, ProductD
       });
   }
 
+  $scope.editProduct = function editProduct(product) {
+    ProductDlg.show(product).then(function(product) {
+      AppResource.updateProduct(parseInt($scope.userID), product).success(function(data) {
+        console.log("updated product!");
+      }).error(function() {
+        console.log("error updating product");
+      })
+    });
+  }
+
 });
