@@ -1,7 +1,7 @@
 "use strict";
 
-angular.module("project3App").factory("SellerDlg",
-    function SellerDlg($uibModal) {
+angular.module("project3App").factory("ProductDlg",
+    function ProductDlg($uibModal) {
         return {
             show: function () {
                 var modalInstance = $uibModal.open({
