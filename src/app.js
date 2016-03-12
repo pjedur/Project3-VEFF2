@@ -14,4 +14,13 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices"])
 	  enabled: true,
 	  requireBase: false
 	});
+	/*
+	$translateProvider.useStaticFilesLoader({
+		prefix: "lang_",
+		suffix: ".json"
+	});
+
+	$translateProvider.use("is");
+*/
+
 });
