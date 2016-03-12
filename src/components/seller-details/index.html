@@ -14,19 +14,27 @@
     </div>
 </div>
 
-<table class="table table-hover">
-  <thead class="thead-inverse">
-    <tr>
-      <th> <span> Product name </span> <!-- translate="sellers.Name" --> </th>
-      <th> <span> Price </span> <!-- translate="sellers.Category" --> </th>
-      <th> <span> Image </span> <!-- translate="sellers.Category" --> </th>
-    </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="product in sellerProducts">
-        <td> <a href="#"> {{product.name}} </a> </td>
-        <td> <a href="#"> {{product.price}} </a> </td>
-        <td> <img src="{{product.imagePath}}" height="72" width="92"/> </td>
-      </tr>
-    </tbody>
-</table>
+<uib-tabset active="activeJustified" justified="true">
+  <uib-tab index="0" heading="Products">
+    <table class="table table-hover">
+      <thead class="thead-inverse">
+        <tr>
+          <th> <span> Product name </span> <!-- translate="sellers.Name" --> </th>
+          <th> <span> Price </span> <!-- translate="sellers.Category" --> </th>
+          <th> <span> Image </span> <!-- translate="sellers.Category" --> </th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="product in sellerProducts">
+            <td> <a href="#"> {{product.name}} </a> </td>
+            <td> <a href="#"> {{product.price}} </a> </td>
+            <td> <img src="{{product.imagePath}}" height="72" width="92"/> </td>
+          </tr>
+        </tbody>
+    </table>
+  </uib-tab>
+  <uib-tab index="1" heading="Top 10">hérna á að koma listi yfir topp 10</uib-tab>
+
+</uib-tabset>
+
+<hr />
