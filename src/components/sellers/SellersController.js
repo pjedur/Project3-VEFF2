@@ -28,7 +28,7 @@ function SellersController($scope, AppResource, $location, SellerDlg) {
 				// centris notify
 			});
 		});
-	}
+	};
 
 
 	$scope.editSeller = function editSeller(seller) {
@@ -38,9 +38,9 @@ function SellersController($scope, AppResource, $location, SellerDlg) {
 			}).error(function() {
 				console.log("could not update seller ");
 				//centrisnotify
-			})
+			});
 		});
-	}
+	};
 
 
 });

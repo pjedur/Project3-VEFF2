@@ -27,7 +27,7 @@ function SellerController($scope, AppResource, $routeParams, $location, ProductD
           $scope.errorMessage = "Could not add product";
         });
       });
-  }
+  };
 
   $scope.editProduct = function editProduct(product) {
     ProductDlg.show(product).then(function(product) {
@@ -35,8 +35,8 @@ function SellerController($scope, AppResource, $routeParams, $location, ProductD
         console.log("updated product!");
       }).error(function() {
         console.log("error updating product");
-      })
+      });
     });
-  }
+  };
 
 });

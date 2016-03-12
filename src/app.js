@@ -21,6 +21,7 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices", "pas
 	});
 
 	$translateProvider.use("is");
+	//moment.locale("is");
 
 
 });

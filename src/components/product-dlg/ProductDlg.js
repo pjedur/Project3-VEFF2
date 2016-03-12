@@ -11,7 +11,7 @@ angular.module("project3App").factory("ProductDlg",
                       modalParam: function() {
                         return {
                           product: product
-                        }
+                        };
                       }
                     }
                 });
