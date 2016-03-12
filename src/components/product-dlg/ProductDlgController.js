@@ -2,13 +2,6 @@
 
 angular.module("project3App").controller("ProductDlgController",
     function ProductDlgController($scope, modalParam) {
-        /*$scope.product = {
-          name: "",
-          price: "",
-          quantitySold: "",
-          quantityInStock: "",
-          imagePath: ""
-        };*/
         $scope.product = modalParam.product;
 
         $scope.onOk = function onOk() {
