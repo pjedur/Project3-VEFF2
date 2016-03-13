@@ -5,7 +5,7 @@ angular.module("project3App").factory("SellerDlg",
         return {
             show: function (seller) {
                 var modalInstance = $uibModal.open({
-                    templateUrl: "components/seller-dlg/seller-dlg.html",
+                    templateUrl: "components/seller-dlg/Seller-dlg.html",
                     controller: "SellerDlgController",
                     resolve: {
                       modalParam: function() {

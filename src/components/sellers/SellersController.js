@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-function SellersController($scope, AppResource, $location, SellerDlg) {
+function SellersController($scope, AppResource, $translate, $location, SellerDlg) {
 	$scope.user = "";
 	$scope.lang = "";
 
@@ -38,6 +38,10 @@ function SellersController($scope, AppResource, $location, SellerDlg) {
 			});
 		});
 	};
+
+	$scope.changeLanguage = function (langKey) {
+	 $translate.use(langKey);
+ };
 
 
 });

@@ -3,7 +3,10 @@
 		"Product":                     "Product name",
 		"Price":                      "Price",
 		"Image":											"Image",
-		"Add":												"Add",
+		"Add":												"Add product",
+			"Edit":												"Edit product",
+			"Products":									"Products",
+			"Top10":										"Top 10",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of products",
 			"SaveSucceeded":         "The product has been added successfully",

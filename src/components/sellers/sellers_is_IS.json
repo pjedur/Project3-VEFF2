@@ -1,9 +1,12 @@
 {
 	"sellers" : {
-		"Title":                     "Seljendur",
+		"Title":                     "Söluaðilar",
 		"Category":										"Flokkur",
 		"Name":                      "Nafn",
 		"Edit":											"Breyta",
+		"Add":											"Bæta við söluaðila",
+		"Icelandic":								"Íslenska",
+		"English":									"Enska",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",

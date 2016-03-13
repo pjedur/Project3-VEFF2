@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellerController",
-function SellerController($scope, AppResource, $routeParams, $location, ProductDlg) {
+    function SellerController($scope, AppResource, $routeParams, $location, ProductDlg) {
 
   $scope.userID = $routeParams.sellerID;
   $scope.message = "HAHAHGA";
@@ -39,9 +39,7 @@ function SellerController($scope, AppResource, $routeParams, $location, ProductD
         console.log("error updating product");
 
       });
-
         //centris notify !!
-      })
-
-    });
-  });
+      });
+  };
+});

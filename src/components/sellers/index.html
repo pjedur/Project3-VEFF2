@@ -1,9 +1,9 @@
-<button ng-click="lang=EN"> English </button>
-<button ng-click="lang=IS"> Icelandic </button>
+<button ng-click="changeLanguage('en')" translate="sellers.English"></button>
+<button ng-click="changeLanguage('is')" translate="sellers.Icelandic"></button>
 
 <div ng-if="errorMessage"> {{errorMessage}}</div>
 <div>
-  <button type="button" class="btn btn-default" ng-click="addSeller()"> Add new seller </button>
+  <button type="button" class="btn btn-default" ng-click="addSeller()" translate="sellers.Add"></button>
 </div>
 
 
@@ -11,11 +11,11 @@
   <thead class="thead-inverse">
     <tr>
       <th>
-        <span translate="Sellers.Title"/> <!-- translate="sellers.Name" -->
+        <span translate="sellers.Title"/> <!-- translate="sellers.Name" -->
 
       </th>
-      <th> <span translate="Sellers.Category"/>  <!-- translate="sellers.Category" --> </th>
-      <th><span translate="Sellers.Edit"/></th>
+      <th> <span translate="sellers.Category"/>  <!-- translate="sellers.Category" --> </th>
+      <th><span translate="sellers.Edit"/></th>
     </tr>
     </thead>
     <tbody>
@@ -27,7 +27,7 @@
         <td> {{seller.category}}
         </td>
         <td>
-          <button type="button" class="btn btn-default" ng-click="editSeller(seller)"> Edit </button>
+          <button type="button" class="btn btn-default" ng-click="editSeller(seller)" translate="sellers.Edit"></button>
         </td>
       </tr>
     </tbody>

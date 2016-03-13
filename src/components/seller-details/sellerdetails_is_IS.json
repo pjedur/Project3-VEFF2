@@ -3,7 +3,10 @@
 		"Product":                     "Nafn vöru",
 		"Price":                      "Verð",
 		"Image":											"Mynd",
-		"Add":												"Bæta við",
+		"Add":												"Bæta við vöru",
+		"Edit":												"Breyta vöru",
+		"Products":									"Vörur",
+		"Top10":										"Topp 10",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
 			"SaveSucceeded":         "Nýjum vörum hefur verið bætt við",

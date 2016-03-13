@@ -45,6 +45,7 @@ module.exports = {
 		],
 		lint:    [
 			"src/**/*.js",
+			"!src/components/resource/AppResource.js",
 			"!src/vendor/**/*.*",
 			"!src/assets/**/*.*"
 		],

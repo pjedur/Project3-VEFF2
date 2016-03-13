@@ -1,7 +1,7 @@
 <h3> Seller details </h3>
 <div ng-if="errorMessage"> {{errorMessage}}</div>
 <div>
-  <button type="button" class="btn btn-default" ng-click="addProduct()"> Add new product </button>
+  <button type="button" class="btn btn-default" ng-click="addProduct()" translate="sellerdetails.Add"> </button>
 </div>
 
 <div ng-if="errorMessage">
@@ -16,14 +16,15 @@
 
 
 <uib-tabset active="activeJustified" justified="true">
-  <uib-tab index="0" heading="Products">
+  
+  <uib-tab index="0"  >
 
     <product ></product>
 
 
 
   </uib-tab>
-  <uib-tab index="1" heading="Top 10">
+  <uib-tab index="1" >
     hérna á að koma listi yfir topp 10
   </uib-tab>
 
