@@ -4,7 +4,6 @@ angular.module("project3App").controller("SellerController",
     function SellerController($scope, AppResource, $routeParams, $translate, $location, ProductDlg, centrisNotify) {
 
   $scope.userID = $routeParams.sellerID;
-  $scope.message = "HAHAHGA";
 
 
   AppResource.getSellerDetails($scope.userID).success(function(data) {

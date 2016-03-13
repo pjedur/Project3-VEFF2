@@ -18,7 +18,6 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 		SellerDlg.show().then(function(seller) {
 			AppResource.addSeller(seller).success(function(data) {
 					$scope.newSeller = data;
-					console.log("new seller : " + data);
 					centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}).error(function() {
 				centrisNotify.error("sellers.Messages.SaveFailed");
@@ -33,7 +32,6 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 				centrisNotify.error("sellers.Message.EditFailed");
 			}
 			AppResource.updateSeller(parseInt(seller.id), seller).success(function(data) {
-					console.log("changed seller now -> " + data);
 					centrisNotify.success("sellers.Messages.EditSucceeded");
 			}).error(function() {
 				centrisNotify.error("sellers.Messages.EditFailed");
