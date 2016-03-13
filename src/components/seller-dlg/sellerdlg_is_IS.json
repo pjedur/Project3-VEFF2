@@ -7,9 +7,8 @@
 		"Add":												"Í lagi",
 		"Cancel":											"Hætta við",
 		"Messages" : {
-			"LoadFailed":            "Ekki tókst að hlaða lista af vörum",
-			"SaveSucceeded":         "Það tókst að bæta við vöru",
-			"SaveFailed":            "Því miður fór eitthvað úrskeiðis"
+			"ErrorInput":            "Eitthvað er ekki í lagi með upplýsingarnar, athugaðu það og prófaðu aftur"
+
 		}
 	}
 }

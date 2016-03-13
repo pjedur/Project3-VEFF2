@@ -9,7 +9,7 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 	AppResource.getSellers().success(function(sellers) {
 		$scope.sellers = sellers;
 	}).error(function() {
-		$scope.errorMessage = "Could not get sellers";
+		centrisNotify.success("sellers.Messages.LoadFailed");
 		//centris notify
 	});
 
@@ -22,8 +22,7 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 					console.log("new seller : " + data);
 					centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}).error(function() {
-				$scope.errorMessage = "Could not add seller";
-				// centris notify
+				centrisNotify.success("sellers.Messages.SaveFailed");
 			});
 		});
 	};
@@ -33,9 +32,10 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 		SellerDlg.show(seller).then(function() {
 			AppResource.updateSeller(parseInt(seller.id), seller).success(function(data) {
 					console.log("changed seller now -> " + data);
+					centrisNotify.success("sellers.Messages.EditSucceeded");
 			}).error(function() {
 				console.log("could not update seller ");
-				//centrisnotify
+				centrisNotify.success("sellers.Messages.EditFailed");
 			});
 		});
 	};

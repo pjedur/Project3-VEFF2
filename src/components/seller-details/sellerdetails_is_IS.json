@@ -9,8 +9,11 @@
 		"Top10":										"Topp 10",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
+			"LoadFailed":            "Ekki tókst að sækja upplýsingar um vörur",
 			"SaveSucceeded":         "Nýrri vöru hefur verið bætt við",
-			"SaveFailed":            "Því miður tókst ekki að bæta við nýrri vöru"
+			"SaveFailed":            "Því miður tókst ekki að bæta við nýrri vöru",
+			"EditSucceeded":         "Það tókst að uppfæra vöru",
+			"EditFailed":            "Því miður tókst ekki að uppfæra vöru"
 		}
 	}
 }

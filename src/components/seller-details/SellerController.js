@@ -10,13 +10,13 @@ angular.module("project3App").controller("SellerController",
   AppResource.getSellerDetails($scope.userID).success(function(data) {
     $scope.sellerDetails = data;
   }).error(function() {
-    $scope.errorMessage = "Could not get details for seller";
+    centrisNotify.success("sellerdetails.Messages.LoadDetailsFailed");
   });
 
   AppResource.getSellerProducts($scope.userID).success(function(data) {
     $scope.sellerProducts = data;
   }).error(function() {
-    $scope.errorMessage = "Could not get products for seller";
+    centrisNotify.success("sellerdetails.Messages.LoadFailed");
   });
 
 
@@ -26,8 +26,7 @@ angular.module("project3App").controller("SellerController",
         $scope.sellerProducts.push(data);
         centrisNotify.success("sellerdetails.Messages.SaveSucceeded");
         }).error(function() {
-          $scope.errorMessage = "Could not add product";
-          //centrisnotify !!!!
+          centrisNotify.success("sellerdetails.Messages.SaveFailed");
         });
       });
   };
@@ -38,9 +37,9 @@ angular.module("project3App").controller("SellerController",
         console.log("updated product!");
       }).error(function() {
         console.log("error updating product");
-
+        centrisNotify.success("sellerdetails.Messages.EditSucceeded");
       });
-        //centris notify !!
+        centrisNotify.success("sellerdetails.Messages.EditFailed");
       });
   };
   $scope.changeLanguage = function (langKey) {

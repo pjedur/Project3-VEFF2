@@ -1,4 +1,5 @@
 {
+	"NotificationTitle":           "Titill",
 	"sellers" : {
 		"Title":                     "Söluaðilar",
 		"Category":										"Flokkur",
@@ -8,7 +9,9 @@
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
-			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
+			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda",
+			"EditSucceeded":				"Seljanda hefur verið breytt",
+			"EditFailed":						"Því miður tókst ekki að breyta seljanda"
 		}
 	}
 }

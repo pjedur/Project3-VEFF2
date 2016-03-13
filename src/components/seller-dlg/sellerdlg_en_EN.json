@@ -7,9 +7,7 @@
 		"Add":												"OK",
 		"Cancel":											"Cancel",
 		"Messages" : {
-			"LoadFailed":            "Failed to load the list of products",
-			"SaveSucceeded":         "The product has been added successfully",
-			"SaveFailed":            "Unfortunately we could not add a new product"
+			"ErrorInput":            "Something is wrong with your input, please check it and try again"
 		}
 	}
 }

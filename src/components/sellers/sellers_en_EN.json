@@ -1,4 +1,5 @@
 {
+	"NotificationTitle":           "Titill",
 	"sellers" : {
 		"Title":                     "Sellers",
 		"Category":										"Category",
@@ -8,7 +9,9 @@
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",
-			"SaveFailed":            "Unfortunately we could not add a new seller"
+			"SaveFailed":            "Unfortunately we could not add a new seller",
+			"EditSucceeded":				"The user has been editet",
+			"EditFailed":						"Something went wrong, the user has not been editet"
 		}
 	}
 }
