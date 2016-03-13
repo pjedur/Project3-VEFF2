@@ -3,7 +3,7 @@
 angular.module("project3App").controller("SellersController",
 function SellersController($scope, AppResource, $translate, $location, SellerDlg, centrisNotify) {
 	$scope.user = "";
-	$scope.lang = "";
+	$scope.lang = "sadas";
 
 
 	AppResource.getSellers().success(function(sellers) {
