@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellerController",
-    function SellerController($scope, AppResource, $routeParams, $location, ProductDlg) {
+    function SellerController($scope, AppResource, $routeParams, $translate, $location, ProductDlg) {
 
   $scope.userID = $routeParams.sellerID;
   $scope.message = "HAHAHGA";
@@ -42,4 +42,8 @@ angular.module("project3App").controller("SellerController",
         //centris notify !!
       });
   };
+  $scope.changeLanguage = function (langKey) {
+   $translate.use(langKey);
+ };
+
 });

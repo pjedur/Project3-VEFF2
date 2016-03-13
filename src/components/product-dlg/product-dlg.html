@@ -1,27 +1,25 @@
 <div>
         <div class="modal-header">
-            <h2 class="form-control-header">Add new product</h2>
+            <h2 class="form-control-header" translate="productdlg.AddProduct">Add new product</h2>
         </div>
         <div class="modal-body">
           <form class="form-horizontal modal-body">
-            <label for="modalName" class="sr-only"></label>
-            <input type="text" id="modalName" class="form-control" placeholder="Name" ng-model="product.name"/>
+            <label  translate="productdlg.Product"></label>
+            <input type="text"  class="form-control" placeholder="" ng-model="product.name"/>
             <br>
-            <label for="modalPrice" class="sr-only"></label>
-            <input type="text" id="modalPrice" class="form-control" placeholder="Price" ng-model="product.price"/>
-            <br><label for="modalSold" class="sr-only"></label>
-            <input type="text" id="modalSold" class="form-control" placeholder="Quantity sold" ng-model="product.quantitySold"/>
+            <label  translate="productdlg.Price"></label>
+            <input type="text"  class="form-control"  ng-model="product.price"/>
             <br>
-            <label for="modalStock" class="sr-only"></label>
-            <input type="text" id="modalStock" class="form-control" placeholder="Quantity in stock" ng-model="product.quantityInStock"/>
+            <label  translate="productdlg.QuantityInStock"></label>
+            <input type="text"  class="form-control"  ng-model="product.quantityInStock"/>
             <br>
-            <label for="modalImage" class="sr-only"></label>
-            <input type="text" id="modalImage" class="form-control" placeholder="Image path" ng-model="product.imagePath"/>
+            <label  translate="productdlg.Image"></label>
+            <input type="text" class="form-control"  ng-model="product.imagePath"/>
             <br>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-lg btn-primary form-control-button" type="submit" ng-click="onOk()">OK</button>
-            <button class="btn btn-lg btn-danger" type="button" ng-click="onCancel()">Cancel</button>
+            <button class="btn btn-lg btn-primary form-control-button" type="submit" ng-click="onOk()" translate="productdlg.Add"></button>
+            <button class="btn btn-lg btn-danger" type="button" ng-click="onCancel()" translate="productdlg.Cancel"></button>
         </div>
 
 

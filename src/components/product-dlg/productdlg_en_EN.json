@@ -1,12 +1,12 @@
 {
-	"sellerdetails" : {
-		"Header":											"Seller details",
+	"productdlg" : {
+		"AddProduct":									"Add new Product",
 		"Product":                     "Product name",
-		"Price":                      "Price",
-		"Image":											"Image",
-		"Add":												"Add product",
-			"Products":									"Products",
-			"Top10":										"Top 10",
+		"Price":											"Price",
+		"QuantityInStock":						"Quantity in stock",
+		"Image":											"Image path",
+		"Add":												"OK",
+		"Cancel":											"Cancel",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of products",
 			"SaveSucceeded":         "The product has been added successfully",

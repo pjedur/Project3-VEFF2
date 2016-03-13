@@ -1,5 +1,6 @@
 {
 	"sellerdetails" : {
+		"Header":											"Um söluaðila",
 		"Product":                     "Nafn vöru",
 		"Price":                      "Verð",
 		"Image":											"Mynd",

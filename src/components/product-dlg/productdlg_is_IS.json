@@ -1,8 +1,9 @@
 {
-	"sellerdlg" : {
-		"AddSeller":									"Bæta við söluaðila",
-		"Seller":                     "Nafn söluaðila",
-		"Category":                      "Flokkur",
+	"productdlg" : {
+		"AddProduct":									"Bæta við vöru",
+		"Product":                     "Nafn vöru",
+		"Price":											"Verð",
+		"QuantityInStock":						"Fjöldi til á lager",
 		"Image":											"Slóð á mynd",
 		"Add":												"Í lagi",
 		"Cancel":											"Hætta við",

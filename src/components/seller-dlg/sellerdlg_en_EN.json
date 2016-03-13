@@ -1,5 +1,6 @@
 {
 	"sellerdlg" : {
+		"AddSeller":									"Add new seller",
 		"Seller":                     "Seller name",
 		"Category":                      "Category",
 		"Image":											"Image path",

@@ -1,9 +1,10 @@
-<button ng-click="changeLanguage('en')" translate="sellers.English"></button>
-<button ng-click="changeLanguage('is')" translate="sellers.Icelandic"></button>
-
+<div style="float:right;">
+<input type="image" ng-click="changeLanguage('is')" src="http://www.allvacationtour.com/graphics/flags/iceland-flag.jpg" width="35" height="30"/>
+<input type="image" ng-click="changeLanguage('en')" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/US_flag_48_stars.svg/220px-US_flag_48_stars.svg.png" width="35" height="30"/>
+</div>
 <div ng-if="errorMessage"> {{errorMessage}}</div>
-<div>
-  <button type="button" class="btn btn-default" ng-click="addSeller()" translate="sellers.Add"></button>
+<div style="padding-top: 0.5cm; padding-bottom: 0.5cm;">
+  <button type="button" class="btn btn-default" ng-click="addSeller()"  translate="sellers.Add"></button>
 </div>
 
 

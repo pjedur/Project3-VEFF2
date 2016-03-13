@@ -5,8 +5,6 @@
 		"Name":                      "Name",
 			"Edit":											"Edit",
 			"Add":											"Add seller",
-			"Icelandic":								"Icelandic",
-			"English":									"English",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",
