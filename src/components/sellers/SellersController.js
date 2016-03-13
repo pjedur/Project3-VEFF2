@@ -29,6 +29,9 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 
 	$scope.editSeller = function editSeller(seller) {
 		SellerDlg.show(seller).then(function() {
+			if(seller.name === undefined){
+				centrisNotify.error("sellers.Message.EditFailed");
+			}
 			AppResource.updateSeller(parseInt(seller.id), seller).success(function(data) {
 					console.log("changed seller now -> " + data);
 					centrisNotify.success("sellers.Messages.EditSucceeded");

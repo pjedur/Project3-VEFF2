@@ -7,6 +7,7 @@ angular.module("project3App").controller("ProductDlgController",
         $scope.onOk = function onOk() {
 
             if ($scope.product === undefined ||
+              $scope.product.name === undefined ||
               $scope.product.price === undefined ||
               $scope.product.quantityInStock === undefined ||
               $scope.product.imagePath === undefined){
