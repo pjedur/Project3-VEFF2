@@ -10,7 +10,7 @@ angular.module("project3App").controller("SellerController",
   AppResource.getSellerDetails($scope.userID).success(function(data) {
     $scope.sellerDetails = data;
   }).error(function() {
-    centrisNotify.success("sellerdetails.Messages.LoadDetailsFailed");
+    centrisNotify.error("sellerdetails.Messages.LoadDetailsFailed");
   });
 
   AppResource.getSellerProducts($scope.userID).success(function(data) {
@@ -18,7 +18,7 @@ angular.module("project3App").controller("SellerController",
     var temp = data.sort(function(a,b) { return b.quantitySold - a.quantitySold; });
     $scope.sellerTop10Products = temp.slice(0, 10);
   }).error(function() {
-    centrisNotify.success("sellerdetails.Messages.LoadFailed");
+    centrisNotify.error("sellerdetails.Messages.LoadFailed");
   });
 
 
@@ -28,7 +28,7 @@ angular.module("project3App").controller("SellerController",
         $scope.sellerProducts.push(data);
         centrisNotify.success("sellerdetails.Messages.SaveSucceeded");
         }).error(function() {
-          centrisNotify.success("sellerdetails.Messages.SaveFailed");
+          centrisNotify.error("sellerdetails.Messages.SaveFailed");
         });
       });
   };
@@ -36,12 +36,10 @@ angular.module("project3App").controller("SellerController",
   $scope.editProduct = function editProduct(product) {
     ProductDlg.show(product).then(function(product) {
       AppResource.updateProduct(parseInt($scope.userID), product).success(function(data) {
-        console.log("updated product!");
-      }).error(function() {
         centrisNotify.success("sellerdetails.Messages.EditSucceeded");
-
+      }).error(function() {
+        centrisNotify.error("sellerdetails.Messages.EditFailed");
       });
-        centrisNotify.success("sellerdetails.Messages.EditFailed");
       });
   };
   $scope.changeLanguage = function (langKey) {
