@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-function SellersController($scope, AppResource, $translate, $location, SellerDlg) {
+function SellersController($scope, AppResource, $translate, $location, SellerDlg, centrisNotify) {
 	$scope.user = "";
 	$scope.lang = "";
 
@@ -20,6 +20,7 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 			AppResource.addSeller(seller).success(function(data) {
 					$scope.newSeller = data;
 					console.log("new seller : " + data);
+					centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}).error(function() {
 				$scope.errorMessage = "Could not add seller";
 				// centris notify

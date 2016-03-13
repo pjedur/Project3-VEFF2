@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellerController",
-    function SellerController($scope, AppResource, $routeParams, $translate, $location, ProductDlg) {
+    function SellerController($scope, AppResource, $routeParams, $translate, $location, ProductDlg, centrisNotify) {
 
   $scope.userID = $routeParams.sellerID;
   $scope.message = "HAHAHGA";
@@ -24,6 +24,7 @@ angular.module("project3App").controller("SellerController",
       ProductDlg.show().then(function(product) {
         AppResource.addSellerProduct(parseInt($scope.userID), product).success(function(data) {
         $scope.sellerProducts.push(data);
+        centrisNotify.success("sellerdetails.Messages.SaveSucceeded");
         }).error(function() {
           $scope.errorMessage = "Could not add product";
           //centrisnotify !!!!
