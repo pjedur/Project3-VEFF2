@@ -1,0 +1,14 @@
+{
+	"sellerdlg" : {
+		"Seller":                     "Seller name",
+		"Category":                      "Category",
+		"Image":											"Image path",
+		"Add":												"OK",
+		"Cancel":											"Cancel",
+		"Messages" : {
+			"LoadFailed":            "Failed to load the list of products",
+			"SaveSucceeded":         "The product has been added successfully",
+			"SaveFailed":            "Unfortunately we could not add a new product"
+		}
+	}
+}

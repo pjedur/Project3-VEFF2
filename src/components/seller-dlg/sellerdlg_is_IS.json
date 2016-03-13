@@ -1,0 +1,14 @@
+{
+	"sellerdlg" : {
+		"Seller":                     "Nafn söluaðila",
+		"Category":                      "Flokkur",
+		"Image":											"Slóð á mynd",
+		"Add":												"Í lagi",
+		"Cancel":											"Hætta við",
+		"Messages" : {
+			"LoadFailed":            "Ekki tókst að hlaða lista af vörum",
+			"SaveSucceeded":         "Það tókst að bæta við vöru",
+			"SaveFailed":            "Því miður fór eitthvað úrskeiðis"
+		}
+	}
+}

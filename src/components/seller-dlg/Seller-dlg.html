@@ -4,19 +4,19 @@
         </div>
         <div class="modal-body">
           <form class="form-horizontal modal-body">
-            <label for="modalName" class="sr-only"></label>
-            <input type="text" id="modalName" class="form-control" placeholder="Name" ng-model="seller.name"/>
+            <label for="modalName" class="sr-only" translate="sellerdlg.Seller"></label>
+            <input type="text" id="modalName" class="form-control"  ng-model="seller.name"/>
             <br>
-            <label for="modalCategory" class="sr-only"></label>
-            <input type="text" id="modalCategory" class="form-control" placeholder="Category" ng-model="seller.category"/>
+            <label for="modalCategory" class="sr-only" translate="sellerdlg.Category"></label>
+            <input type="text" id="modalCategory" class="form-control"  ng-model="seller.category"/>
             <br>
-            <label for="modalImage" class="sr-only"></label>
-            <input type="text" id="modalImage" class="form-control" placeholder="Image path" ng-model="seller.imagePath"/>
+            <label for="modalImage" class="sr-only" translate="sellerdlg.Image"></label>
+            <input type="text" id="modalImage" class="form-control"  ng-model="seller.imagePath"/>
             <br>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-lg btn-primary form-control-button" type="submit" ng-click="onOk()">OK</button>
-            <button class="btn btn-lg btn-danger" type="button" ng-click="onCancel()">Cancel</button>
+            <button class="btn btn-lg btn-primary form-control-button" type="submit" ng-click="onOk()" translate="sellerdlg.Add"></button>
+            <button class="btn btn-lg btn-danger" type="button" ng-click="onCancel()" translate="sellerdlg.Cancel"></button>
         </div>
 
         <div class="modal-footer">
