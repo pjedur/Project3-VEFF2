@@ -1,11 +1,6 @@
 {
-	"sellerdetails" : {
-		"Product":                     "Nafn vöru",
-		"Price":                      "Verð",
-		"Image":											"Mynd",
-		"Add":												"Bæta við vöru",
-		"Products":									"Vörur",
-		"Top10":										"Topp 10",
+	"product" : {
+		"Edit":												"Breyta vöru",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
 			"SaveSucceeded":         "Nýjum vörum hefur verið bætt við",

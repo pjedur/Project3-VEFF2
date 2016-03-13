@@ -2,14 +2,14 @@
   <ul class="list-inline">
     <li ng-repeat="p in sellerProducts">
       <div class="panel panel-default">
-        <img src="{{p.imagePath}}" height="72" width="92" />
+        <img src="{{p.imagePath}}" height="102" width="122" />
         <div>
           {{p.name}}
         </div>
         <div>
           {{p.price}}
         </div>
-          <button type="button" class="btn btn-default" ng-click="editProduct(p)"> Edit</button>
+          <button type="button" class="btn btn-default" ng-click="editProduct(p)" translate="product.Edit"> </button>
       </div>
     </li>
   </ul>
