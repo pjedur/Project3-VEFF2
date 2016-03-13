@@ -8,24 +8,28 @@
 </div>
 
 
-<table class="table table-hover">
-  <thead class="thead-inverse">
-    <tr>
-      <th>
-        <span translate="sellers.Title"/> <!-- translate="sellers.Name" -->
 
+<table class="table table-hover">
+  <thead >
+    <tr table-sort="seller">
+      <th data-columnName="name">
+        <a href="#"  translate="sellers.Title"/>
       </th>
-      <th> <span translate="sellers.Category"/>  <!-- translate="sellers.Category" --> </th>
-      <th><span translate="sellers.Edit"/></th>
+      <th data-columnName="category">
+        <a href="#" translate="sellers.Category"/>
+      </th>
+      <th>
+        <span translate="sellers.Edit"></span>
+      </th>
     </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="seller in sellers">
-
+      <tr ng-repeat="seller in sellers | orderBy:predicate:reverse">
         <td>
           <a href="seller/{{seller.id}}"> {{seller.name}} </a>
         </td>
-        <td> {{seller.category}}
+        <td>
+          {{seller.category}}
         </td>
         <td>
           <button type="button" class="btn btn-default" ng-click="editSeller(seller)" translate="sellers.Edit"></button>
