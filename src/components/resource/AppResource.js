@@ -156,13 +156,8 @@ function AppResource() {
 					products.push(mockProducts[i].product);
 				}
 			}
-
-			var arr = products.sort(function(a,b){ return parseInt(b.quantitySold) - parseInt(a.quantitySold) ; })
-			arr = arr.slice(0, 10);
-
-			obj.push(products);
-			obj.push(arr);
-			return mockHttpPromise(mockResource.successGetSellerProducts, obj);
+			
+			return mockHttpPromise(mockResource.successGetSellerProducts, products);
 
 		},
 

@@ -21,7 +21,6 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 					console.log("new seller : " + data);
 					centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}).error(function() {
-				$scope.errorMessage = "Could not add seller";
 				centrisNotify.success("sellers.Messages.SaveFailed");
 			});
 		});
@@ -34,7 +33,6 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 					console.log("changed seller now -> " + data);
 					centrisNotify.success("sellers.Messages.EditSucceeded");
 			}).error(function() {
-				console.log("could not update seller ");
 				centrisNotify.error("sellers.Messages.EditFailed");
 			});
 		});

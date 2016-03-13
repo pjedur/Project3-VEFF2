@@ -7,10 +7,10 @@ angular.module("project3App").controller("ProductDlgController",
         $scope.onOk = function onOk() {
 
             if ($scope.product === undefined ||
-                $scope.product.price === undefined ||
-                $scope.product.quantityInStock === undefined ||
-                $scope.product.imagePath === undefined){
-                centrisNotify.error("productdlg.Messages.ErrorInput");
+              $scope.product.price === undefined ||
+              $scope.product.quantityInStock === undefined ||
+              $scope.product.imagePath === undefined){
+              centrisNotify.error("productdlg.Messages.ErrorInput");
                 return;
             }
             else {

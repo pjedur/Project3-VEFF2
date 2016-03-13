@@ -14,8 +14,9 @@ angular.module("project3App").controller("SellerController",
   });
 
   AppResource.getSellerProducts($scope.userID).success(function(data) {
-    $scope.sellerProducts = data[0];
-    $scope.sellerTop10Products = data[1];
+    $scope.sellerProducts = data;
+    var temp = data.sort(function(a,b) { return b.quantitySold - a.quantitySold; });
+    $scope.sellerTop10Products = temp.slice(0, 10);
   }).error(function() {
     centrisNotify.success("sellerdetails.Messages.LoadFailed");
   });
