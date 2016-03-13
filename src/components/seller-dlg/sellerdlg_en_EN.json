@@ -7,7 +7,7 @@
 		"Add":												"OK",
 		"Cancel":											"Cancel",
 		"Messages" : {
-			"ErrorInput":            "Something is wrong with your input, please check it and try again"
+				"ErrorInput":            "Something is wrong with your input, please check it and try again"
 		}
 	}
 }

@@ -5,7 +5,9 @@ function product() {
   return {
     restrict: "E",
     controller: "SellerController",
-    scope: {},
+    scope: {
+      product: "="
+    },
     templateUrl: "components/product/Product-info.html"
   };
 });

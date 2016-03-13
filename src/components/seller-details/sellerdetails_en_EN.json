@@ -9,7 +9,6 @@
 			"Top10":										"Top 10",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of products",
-			"LoadFailed":            "Failed to load details for products",
 			"SaveSucceeded":         "The product has been added successfully",
 			"SaveFailed":            "Something went wrong, the product has not been added",
 			"EditSucceeded":         "The product has been updated successfully",

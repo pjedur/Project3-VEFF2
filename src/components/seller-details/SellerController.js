@@ -14,7 +14,8 @@ angular.module("project3App").controller("SellerController",
   });
 
   AppResource.getSellerProducts($scope.userID).success(function(data) {
-    $scope.sellerProducts = data;
+    $scope.sellerProducts = data[0];
+    $scope.sellerTop10Products = data[1];
   }).error(function() {
     centrisNotify.success("sellerdetails.Messages.LoadFailed");
   });
@@ -36,8 +37,8 @@ angular.module("project3App").controller("SellerController",
       AppResource.updateProduct(parseInt($scope.userID), product).success(function(data) {
         console.log("updated product!");
       }).error(function() {
-        console.log("error updating product");
         centrisNotify.success("sellerdetails.Messages.EditSucceeded");
+
       });
         centrisNotify.success("sellerdetails.Messages.EditFailed");
       });

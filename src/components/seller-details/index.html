@@ -5,7 +5,14 @@
 </div>
 
 <h3 translate="sellerdetails.Header"></h3>
+<div ng-if="errorMessage"> {{errorMessage}}</div>
 
+
+
+
+<div ng-if="errorMessage">
+  ErrorMessage: {{errorMessage}}
+</div>
 
 <div style="text-align:center;">
   <img src="{{sellerDetails.imagePath}}"height="202" width="242"/>
@@ -18,18 +25,22 @@
 
 
 <uib-tabset active="activeJustified" justified="true">
-
   <uib-tab index="0"  >
     <uib-tab-heading translate="sellerdetails.Products"></uib-tab-heading>
-
-    <product ></product>
-
-
-
+      <ul class="list-inline">
+        <li ng-repeat="p in sellerProducts">
+          <product product="p"> </product>
+        </li>
+      </ul>
   </uib-tab>
   <uib-tab index="1" >
     <uib-tab-heading translate="sellerdetails.Top10"></uib-tab-heading>
-    hérna á að koma listi yfir topp 10
+  
+    <ul class="list-inline">
+      <li ng-repeat="p in sellerTop10Products">
+        <product product="p"> </product>
+      </li>
+    </ul>
   </uib-tab>
 
 </uib-tabset>
