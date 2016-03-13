@@ -14,7 +14,8 @@ angular.module("project3App").controller("SellerController",
   });
 
   AppResource.getSellerProducts($scope.userID).success(function(data) {
-    $scope.sellerProducts = data;
+    $scope.sellerProducts = data[0];
+    $scope.sellerTop10Products = data[1];
   }).error(function() {
     $scope.errorMessage = "Could not get products for seller";
   });

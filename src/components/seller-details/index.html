@@ -1,7 +1,7 @@
 <div style="float:right;">
   <input type="image" ng-click="changeLanguage('is')" src="http://www.allvacationtour.com/graphics/flags/iceland-flag.jpg" width="35" height="30"/>
   <input type="image" ng-click="changeLanguage('en')" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/US_flag_48_stars.svg/220px-US_flag_48_stars.svg.png" width="35" height="30"/>
-  
+
 </div>
 
 <h3 translate="sellerdetails.Header"></h3>
@@ -25,18 +25,22 @@
 
 
 <uib-tabset active="activeJustified" justified="true">
-
   <uib-tab index="0"  >
     <uib-tab-heading translate="sellerdetails.Products"></uib-tab-heading>
-
-    <product ></product>
-
-
-
+      <ul class="list-inline">
+        <li ng-repeat="p in sellerProducts">
+          <product product="p"> </product>
+        </li>
+      </ul>
   </uib-tab>
   <uib-tab index="1" >
     <uib-tab-heading translate="sellerdetails.Top10"></uib-tab-heading>
     hérna á að koma listi yfir topp 10
+    <ul class="list-inline">
+      <li ng-repeat="p in sellerTop10Products">
+        <product product="p"> </product>
+      </li>
+    </ul>
   </uib-tab>
 
 </uib-tabset>

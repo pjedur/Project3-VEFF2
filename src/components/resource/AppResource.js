@@ -150,14 +150,20 @@ function AppResource() {
 
 		getSellerProducts: function getSellerProducts(id) {
 			id = parseInt(id);
-			var products = [];
+			var products = [], obj = [];
 			for (var i = 0; i < mockProducts.length; ++i) {
 				if (mockProducts[i].id === id) {
 					products.push(mockProducts[i].product);
 				}
 			}
 
-			return mockHttpPromise(mockResource.successGetSellerProducts, products);
+			var arr = products.sort(function(a,b){ return parseInt(b.quantitySold) - parseInt(a.quantitySold) ; })
+			arr = arr.slice(0, 10);
+
+			obj.push(products);
+			obj.push(arr);
+			return mockHttpPromise(mockResource.successGetSellerProducts, obj);
+
 		},
 
 		addSellerProduct: function addSellerProduct(id, product) {
