@@ -9,7 +9,11 @@ angular.module("project3App").controller("SellerDlgController",
             if ($scope.seller === undefined ||
                 $scope.seller.name === undefined ||
                 $scope.seller.category === undefined ||
-                $scope.seller.imagePath === undefined) {
+                $scope.seller.imagePath === undefined ||
+                $scope.seller === "" ||
+                    $scope.seller.name === "" ||
+                    $scope.seller.category === "" ||
+                    $scope.seller.imagePath === "") {
                   centrisNotify.error("sellerdlg.Messages.ErrorInput");
                 return;
             }
