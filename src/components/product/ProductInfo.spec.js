@@ -2,7 +2,7 @@
 describe("Product info directive", function() {
 
   //var template = "<my-custom-directive ng-model='smu' allow-edit='allow' ></my-custom-directive>";
-  var template = "<product ng-model='p'> </product>"
+  var template = "<product ng-model='p'> </product>";
   var scope;
   var compile;
   var element;
@@ -16,7 +16,7 @@ describe("Product info directive", function() {
     // We must declare the scope properties, they can be changed in each
     // describe block before we compile the directive. They don't need
     // to have a value however.
-    scope.p = undefined
+    scope.p = undefined;
     scope.allow = false;
     // Doesn't really matter what the HTML looks like which is returned
     // when querying for the template...
@@ -38,7 +38,7 @@ describe("Product info directive", function() {
     // Use regular expect() methods to check on the contents of
     // the directive scope, i.e. by using "isolatedScope" instead
     // of "scope".
-    xexpect(scope.whatever).not.toBeDefined();
+    expect(scope.whatever).not.toBeDefined();
     });
   });
   // Etc., more describe() blocks, and more it() blocks as well...

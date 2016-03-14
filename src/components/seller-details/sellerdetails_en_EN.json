@@ -7,6 +7,7 @@
 		"Add":												"Add product",
 			"Products":									"Products",
 			"Top10":										"Top 10",
+			"Alert":										"Unfortunately this seller has no products for sale!",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of products",
 			"SaveSucceeded":         "The product has been added successfully",

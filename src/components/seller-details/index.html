@@ -19,6 +19,9 @@
 <uib-tabset active="activeJustified" justified="true">
   <uib-tab index="0"  >
     <uib-tab-heading translate="sellerdetails.Products"></uib-tab-heading>
+    <div style="padding-top:0.5cm; text-align:center;">
+    <uib-alert ng-show="sellerProducts.length === 0" class="alert alert-danger" ><span translate="sellerdetails.Alert"/></uib-alert>
+  </div>
       <ul class="list-inline">
         <li ng-repeat="p in sellerProducts">
           <product product="p"> </product>

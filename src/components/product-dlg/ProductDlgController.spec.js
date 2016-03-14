@@ -12,12 +12,12 @@ describe("Product dialog factory", function() {
     success: function(string) {
       return {
         result: {}
-      }
+      };
     },
     error: function(string) {
       return {
         result: {}
-      }
+      };
     }
   };
 
@@ -35,10 +35,10 @@ describe("Product dialog factory", function() {
     quantityInStock : "23",
     quantitySold: "241",
     imagePath: "sds"
-  }
+  };
 
-  var dismiss = function() { return; }
-  var close = function(){ return;}
+  var dismiss = function() { return; };
+  var close = function(){ return;};
 
   beforeEach(module("project3App"));
   beforeEach(inject(function($rootScope, $controller, ProductDlg, centrisNotify) {
@@ -65,7 +65,7 @@ describe("Product dialog factory", function() {
   describe("when editing", function() {
     it("should initialize properly", function() {
       expect(scope.onOk).toHaveBeenCalled();
-      expect()
+      expect();
       //expect(centrisnotify.error).toHaveBeenCalled();
       //expect(scope.onCancel).toHaveBeenCalled();
 
