@@ -1,39 +1,118 @@
 "use strict";
 
-describe("SellerController should be unit tested here", function() {
+describe("SellersController", function() {
 
-	beforeEach(module("project3App"));
-	var SellerController, scope;
+		var SellerController,
+		appResource,
+		centrisnotify,
+		productDlg,
+		routeParams,
+		location,
+		translate,
+		scope,
+		$httpBackend;
 
-	beforeEach(inject(function($rootScope, $controller) {
-		scope = $rootScope.new();
+		var successObj = {
+			name      : "bla",
+			category  : "lol",
+			imagePath : "lala"
+		};
+
+		var errorObj = {
+			name      : "",
+			category  : "",
+			imagePath : ""
+		};
+
+	var mockCentrisNotify = {
+			error: function(obj) {
+				return false;
+			},
+			success: function(obj) {
+				return true;
+			}
+		};
+
+
+
+beforeEach(module("project3App"));
+
+	beforeEach(inject(function($rootScope, $controller, AppResource, centrisNotify, $routeParams, ProductDlg, $location) {
+		scope = $rootScope.$new();
+
+		routeParams = $routeParams;
+		productDlg = ProductDlg;
+		location = $location;
+
+		//centrisnotify = mockCentrisNotify;
+		centrisnotify = centrisNotify;
+		appResource = AppResource;
+
 		SellerController = $controller("SellerController", {
-			$scope : scope
+			$scope        : scope,
+			centrisNotify : centrisnotify,
+			AppResource   : appResource,
+			ProductDlg    : productDlg,
+			$routeParams  : routeParams,
+			$location     : location
 		});
+
+		spyOn(scope, "addProduct");
+		spyOn(scope, "editProduct");
+		spyOn(scope, "changeLanguage");
+		//spyOn(appResource, "getSellerDetails")
+		spyOn(centrisNotify, "success");
+		spyOn(centrisNotify, "error");
+		//spyOn(centrisnotify, "success");
+		//spyOn(sellerDlg, "show");
 	}));
 
-	xit("should get seller details", function() {
+	describe("on load up", function() {
+		it("should get all seller details and seller products", function() {
+
+			//expect(scope.userID).toEqual(1);
+			expect(scope.sellerProducts).toBeDefined();
+		  expect(scope.sellerTop10Products).toBeDefined();
+
+			//expect(scope.sellerDetails).toBeDefined();
+			//expect(scope.sellers.length).toEqual(5);
+		});
+	});
+
+	describe("when adding a product", function() {
+		beforeEach(function() {
+			scope.addProduct(successObj);
+		});
+
+		it("should add a user", function() {
+			expect(scope.addProduct).toHaveBeenCalledWith(successObj);
+			//expect(mockCentrisNotify.success).toHaveBeenCalled();
+
+		});
 
 	});
 
-	xit("should set centrisnotify if error getting sellers", function() {
+	describe("when editing a product", function() {
+		beforeEach(function() {
+			scope.editProduct(successObj);
+		});
 
+		it("should edit the seller", function() {
+			expect(scope.editProduct).toHaveBeenCalledWith(successObj);
+			//expect(sellerDlg.show).toHaveBeenCalled();
+		});
 	});
 
-	xit("should add a new valid product object", function() {
 
-	});
+	describe("changes language", function() {
+		beforeEach(function() {
+			scope.changeLanguage("is");
+		});
 
-	xit("should notify when adding an invalid product object", function() {
-
-	});
-
-	xit("should change language when requested", function() {
-
-	});
-
-	xit("should show modal window when adding/editing a product", function() {
-
+		it("should change when requested", function() {
+				expect(scope.changeLanguage).toHaveBeenCalled();
+			//	expect(translate.use).toHaveBeenCalled();
+		});
 	});
 
 });

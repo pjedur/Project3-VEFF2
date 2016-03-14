@@ -2,74 +2,93 @@
 
 describe("SellersController", function() {
 
-	var successObj = {
-		name: "bla",
-		category: "lol",
-		imagePath: "lala"
-	};
+		var SellersController,
+		appResource,
+		centrisnotify,
+		sellerDlg,
+		translate,
+		scope,
+		$httpBackend;
 
-	var errorObj = {
-		name: "",
-		category: "",
-		imagePath: ""
-	};
+		var successObj = {
+			name      : "bla",
+			category  : "lol",
+			imagePath : "lala"
+		};
 
-	beforeEach(module("project3App"));
-	var SellersController, scope, appResource, centrisnotify, sellerDlg, translate;
+		var errorObj = {
+			name      : "",
+			category  : "",
+			imagePath : ""
+		};
 
-	beforeEach(inject(function($rootScope, $controller, AppResource, centrisNotify, SellerDlg, $translate) {
+	var mockCentrisNotify = {
+			error: function(obj) {
+				return false;
+			},
+			success: function(obj) {
+				return true;
+			}
+		};
+
+beforeEach(module("project3App"));
+
+	beforeEach(inject(function($rootScope, $controller, AppResource, centrisNotify, _$httpBackend_, SellerDlg) {
 		scope = $rootScope.$new();
-		centrisnotify = centrisNotify;
-		appResource = AppResource;
+		$httpBackend = _$httpBackend_;
 		sellerDlg = SellerDlg;
-		translate = $translate;
+
+		centrisnotify = mockCentrisNotify;
+		appResource = AppResource;
 
 		SellersController = $controller("SellersController", {
 			$scope        : scope,
 			centrisNotify : centrisnotify,
 			AppResource   : appResource,
-			SellerDlg     : sellerDlg,
-			$translate    : translate
+			SellerDlg     : sellerDlg
+
 		});
 
-	//	spyOn(centrisnotify, "error");
-		spyOn(centrisnotify, "success");
-		spyOn(sellerDlg, "show");
 		spyOn(scope, "addSeller");
 		spyOn(scope, "editSeller");
 		spyOn(scope, "changeLanguage");
-		spyOn(appResource, "addSeller");
-		spyOn(translate, "use");
+		//spyOn(appResource, "getSellers");
+		spyOn(centrisnotify, "success");
+		spyOn(sellerDlg, "show");
 	}));
 
-	describe("addseller", function() {
-		beforeEach(function() {
-			scope.addSeller(successObj);
-		});
-
+	describe("on load up", function() {
 		it("should get all sellers", function() {
 			expect(scope.sellers).toBeDefined();
-			expect(scope.sellers.length).toBeGreaterThan(0);
-			expect(scope.addSeller).toHaveBeenCalledWith(successObj);
-			//expect(centrisnotify.success).toHaveBeenCalled();
-			//expect(sellerDlg.show).toHaveBeenCalled();
-		//	expect(centrisnotify.success).toHaveBeenCalled();
+			expect(scope.sellers.length).toEqual(5);
+		});
+	});
+
+	describe("when adding seller", function() {
+		beforeEach(function() {
+			scope.addSeller();
 		});
 
+		it("should add a user", function() {
+			expect(scope.addSeller).toHaveBeenCalled();
+			//expect(mockCentrisNotify.success).toHaveBeenCalled();
+		});
 
 	});
 
-	describe("editSeller", function() {
+	describe("when editing a seller", function() {
 		beforeEach(function() {
 			scope.editSeller(successObj);
 		});
 
-		it("should blanla", function() {
+		it("should edit the seller", function() {
 			expect(scope.editSeller).toHaveBeenCalledWith(successObj);
+			//expect(sellerDlg.show).toHaveBeenCalled();
 		});
 	});
 
-	describe("language", function() {
+
+	describe("changes language", function() {
 		beforeEach(function() {
 			scope.changeLanguage("is");
 		});
@@ -78,27 +97,6 @@ describe("SellersController", function() {
 				expect(scope.changeLanguage).toHaveBeenCalled();
 			//	expect(translate.use).toHaveBeenCalled();
 		});
-	});
-
-
-	xit("should set centrisnotify if error getting sellers", function() {
-
-	});
-
-	xit("should add a new valid seller object", function() {
-
-	});
-
-	xit("should notify when adding an invalid seller object", function() {
-
-	});
-
-	xit("should change language when requested", function() {
-
-	});
-
-	xit("should show modal window when adding/editing a user", function() {
-
 	});
 
 });
