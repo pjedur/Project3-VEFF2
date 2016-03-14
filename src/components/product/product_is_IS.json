@@ -1,6 +1,8 @@
 {
 	"product" : {
 		"Edit":												"Breyta vöru",
+		"Price":                      "Verð",
+		"InStock": 										"Vörur til á lager",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir vörur",
 			"SaveSucceeded":         "Nýjum vörum hefur verið bætt við",

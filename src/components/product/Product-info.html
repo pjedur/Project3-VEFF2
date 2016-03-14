@@ -1,13 +1,14 @@
 <div class="panel panel-default">
-  <img src="{{product.imagePath}}" height="102" width="122" />
+  <img src="{{product.imagePath}}" ng-if="product.imagePath" height="102" width="122" />
+  <img src="http://huge-it.com/wp-content/plugins/lightbox/images/No-image-found.jpg" ng-if="!product.imagePath" height="102" width="122" />
   <div>
     {{product.name}}
   </div>
   <div>
-    {{product.price}}
+    <span translate="product.Price"> </span>  : {{product.price}}
   </div>
   <div>
-    {{product.quantityInStock}}
+    <span translate="product.InStock"> </span> : {{product.quantityInStock}}
   </div>
     <button type="button" class="btn btn-default" ng-click="editProduct(product)" translate="product.Edit"> </button>
 </div>

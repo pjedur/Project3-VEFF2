@@ -2,9 +2,6 @@
 
 angular.module("project3App").controller("SellersController",
 function SellersController($scope, AppResource, $translate, $location, SellerDlg, centrisNotify) {
-	$scope.user = "";
-	$scope.lang = "sadas";
-
 
 	AppResource.getSellers().success(function(sellers) {
 		$scope.sellers = sellers;
@@ -12,19 +9,15 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 		centrisNotify.error("sellers.Messages.LoadFailed");
 	});
 
-
-
 	$scope.addSeller = function addSeller() {
 		SellerDlg.show().then(function(seller) {
 			AppResource.addSeller(seller).success(function(data) {
-					$scope.newSeller = data;
 					centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}).error(function() {
 				centrisNotify.error("sellers.Messages.SaveFailed");
 			});
 		});
 	};
-
 
 	$scope.editSeller = function editSeller(seller) {
 		SellerDlg.show(seller).then(function() {
@@ -42,6 +35,5 @@ function SellersController($scope, AppResource, $translate, $location, SellerDlg
 	$scope.changeLanguage = function (langKey) {
 	 $translate.use(langKey);
  };
-
 
 });

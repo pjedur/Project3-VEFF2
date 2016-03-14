@@ -15,27 +15,31 @@ describe("SellersController", function() {
 	};
 
 	beforeEach(module("project3App"));
-	var SellersController, scope, appResource, centrisnotify, sellerDlg;
+	var SellersController, scope, appResource, centrisnotify, sellerDlg, translate;
 
-	beforeEach(inject(function($rootScope, $controller, AppResource, centrisNotify, SellerDlg) {
+	beforeEach(inject(function($rootScope, $controller, AppResource, centrisNotify, SellerDlg, $translate) {
 		scope = $rootScope.$new();
 		centrisnotify = centrisNotify;
 		appResource = AppResource;
 		sellerDlg = SellerDlg;
+		translate = $translate;
 
 		SellersController = $controller("SellersController", {
 			$scope        : scope,
 			centrisNotify : centrisnotify,
 			AppResource   : appResource,
-			SellerDlg     : sellerDlg
+			SellerDlg     : sellerDlg,
+			$translate    : translate
 		});
 
 	//	spyOn(centrisnotify, "error");
-	//	spyOn(centrisnotify, "success");
-		spyOn(sellerDlg, "show")
+		spyOn(centrisnotify, "success");
+		spyOn(sellerDlg, "show");
 		spyOn(scope, "addSeller");
 		spyOn(scope, "editSeller");
+		spyOn(scope, "changeLanguage");
 		spyOn(appResource, "addSeller");
+		spyOn(translate, "use");
 	}));
 
 	describe("addseller", function() {
@@ -47,6 +51,7 @@ describe("SellersController", function() {
 			expect(scope.sellers).toBeDefined();
 			expect(scope.sellers.length).toBeGreaterThan(0);
 			expect(scope.addSeller).toHaveBeenCalledWith(successObj);
+			//expect(centrisnotify.success).toHaveBeenCalled();
 			//expect(sellerDlg.show).toHaveBeenCalled();
 		//	expect(centrisnotify.success).toHaveBeenCalled();
 		});
@@ -61,6 +66,17 @@ describe("SellersController", function() {
 
 		it("should blanla", function() {
 			expect(scope.editSeller).toHaveBeenCalledWith(successObj);
+		});
+	});
+
+	describe("language", function() {
+		beforeEach(function() {
+			scope.changeLanguage("is");
+		});
+
+		it("should change when requested", function() {
+				expect(scope.changeLanguage).toHaveBeenCalled();
+			//	expect(translate.use).toHaveBeenCalled();
 		});
 	});
 
