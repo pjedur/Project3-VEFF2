@@ -8,12 +8,12 @@ describe("Seller dialog factory", function() {
     success: function(string) {
       return {
         result: {}
-      }
+      };
     },
     error: function(string) {
       return {
         result: {}
-      }
+      };
     }
   };
 
@@ -23,7 +23,7 @@ describe("Seller dialog factory", function() {
     quantityInStock : "23",
     quantitySold: "241",
     imagePath: "sds"
-  }
+  };
 
   beforeEach(module("project3App"));
   beforeEach(inject(function($rootScope, $controller, ProductDlg, centrisNotify) {

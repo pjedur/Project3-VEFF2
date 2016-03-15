@@ -43,15 +43,15 @@ describe("SellersController", function() {
 					then : function(fn) {
 						fn(successObj);
 					}
-				}
+				};
 			}
-		}
+		};
 
 		var mockTranslate = {
 			use : function() {
 				return {};
 			}
-		}
+		};
 
 beforeEach(module("project3App"));
 
@@ -61,8 +61,6 @@ beforeEach(module("project3App"));
 		routeParams = $routeParams;
 		productDlg = ProductDlg;
 		location = $location;
-
-		//centrisnotify = mockCentrisNotify;
 		centrisnotify = centrisNotify;
 		appResource = AppResource;
 
@@ -79,11 +77,6 @@ beforeEach(module("project3App"));
 		spyOn(scope, "addProduct");
 		spyOn(scope, "editProduct");
 		spyOn(scope, "changeLanguage");
-	//	spyOn(mockTranslate, "use");
-		//spyOn(mockProductDlg, "show");
-		//spyOn(appResource, "getSellerDetails")
-		spyOn(centrisNotify, "success");
-		spyOn(centrisNotify, "error");
 	}));
 
 	describe("on load up", function() {
@@ -102,9 +95,6 @@ beforeEach(module("project3App"));
 
 		it("should add a user", function() {
 			expect(scope.addProduct).toHaveBeenCalledWith(successObj);
-		//	expect(mockProductDlg.show).toHaveBeenCalled();
-			//expect(mockCentrisNotify.success).toHaveBeenCalled();
-
 		});
 
 	});
@@ -116,7 +106,6 @@ beforeEach(module("project3App"));
 
 		it("should edit the seller", function() {
 			expect(scope.editProduct).toHaveBeenCalledWith(successObj);
-			//expect(sellerDlg.show).toHaveBeenCalled();
 		});
 	});
 
@@ -128,8 +117,6 @@ beforeEach(module("project3App"));
 
 		it("should change when requested", function() {
 				expect(scope.changeLanguage).toHaveBeenCalled();
-				//expect(mockTranslate.use).toHaveBeenCalled();
-			//	expect(translate.use).toHaveBeenCalled();
 		});
 	});
 
