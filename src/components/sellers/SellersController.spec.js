@@ -2,13 +2,12 @@
 
 describe("SellersController", function() {
 
-		var SellersController,
-		appResource,
-		centrisnotify,
-		sellerDlg,
-		translate,
-		scope,
-		$httpBackend;
+		var SellersController;
+		var appResource;
+		var centrisnotify;
+		var sellerDlg;
+		var translate;
+		var scope;
 
 		var successObj = {
 			name      : "bla",
@@ -24,78 +23,84 @@ describe("SellersController", function() {
 
 	var mockCentrisNotify = {
 			error: function(obj) {
-				return false;
+				return {};
 			},
 			success: function(obj) {
-				return true;
+				return {};
 			}
 		};
 
+		var mockSellerDlg = {
+			show: function() {
+				return {
+					then: function(fn){
+						fn(successObj);
+					}
+				};
+			}
+		};
+
+
 beforeEach(module("project3App"));
 
-	beforeEach(inject(function($rootScope, $controller, AppResource, centrisNotify, _$httpBackend_, SellerDlg) {
+	beforeEach(inject(function($rootScope, $controller, AppResource, centrisNotify, SellerDlg) {
 		scope = $rootScope.$new();
-		$httpBackend = _$httpBackend_;
-		sellerDlg = SellerDlg;
-
-		centrisnotify = mockCentrisNotify;
+		centrisnotify = centrisNotify;
 		appResource = AppResource;
 
 		SellersController = $controller("SellersController", {
 			$scope        : scope,
 			centrisNotify : centrisnotify,
 			AppResource   : appResource,
-			SellerDlg     : sellerDlg
-
+			SellerDlg     : mockSellerDlg
 		});
 
 		spyOn(scope, "addSeller");
 		spyOn(scope, "editSeller");
 		spyOn(scope, "changeLanguage");
-		//spyOn(appResource, "getSellers");
-		spyOn(centrisnotify, "success");
-		spyOn(sellerDlg, "show");
 	}));
 
 	describe("on load up", function() {
 		it("should get all sellers", function() {
-			expect(scope.sellers).toBeDefined();
-			expect(scope.sellers.length).toEqual(5);
+				expect(scope.sellers).toBeDefined();
+				expect(scope.sellers.length).toEqual(5);
 		});
 	});
 
 	describe("when adding seller", function() {
-		beforeEach(function() {
+		beforeEach(function(done) {
 			scope.addSeller();
+			done();
+
 		});
 
 		it("should add a user", function() {
 			expect(scope.addSeller).toHaveBeenCalled();
-			//expect(mockCentrisNotify.success).toHaveBeenCalled();
 		});
 
 	});
 
 	describe("when editing a seller", function() {
-		beforeEach(function() {
+		beforeEach(function(done) {
+			successObj.id = 1;
 			scope.editSeller(successObj);
+			done();
 		});
 
 		it("should edit the seller", function() {
 			expect(scope.editSeller).toHaveBeenCalledWith(successObj);
-			//expect(sellerDlg.show).toHaveBeenCalled();
 		});
 	});
 
 
 	describe("changes language", function() {
-		beforeEach(function() {
+		beforeEach(function(done) {
 			scope.changeLanguage("is");
+			done();
 		});
 
 		it("should change when requested", function() {
 				expect(scope.changeLanguage).toHaveBeenCalled();
-			//	expect(translate.use).toHaveBeenCalled();
 		});
 	});
 

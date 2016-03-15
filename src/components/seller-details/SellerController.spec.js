@@ -33,11 +33,29 @@ describe("SellersController", function() {
 			}
 		};
 
+		var mockRouteParams = {
+			sellerID: 1
+		};
 
+		var mockProductDlg = {
+			show: function() {
+				return {
+					then : function(fn) {
+						fn(successObj);
+					}
+				}
+			}
+		}
+
+		var mockTranslate = {
+			use : function() {
+				return {};
+			}
+		}
 
 beforeEach(module("project3App"));
 
-	beforeEach(inject(function($rootScope, $controller, AppResource, centrisNotify, $routeParams, ProductDlg, $location) {
+	beforeEach(inject(function($rootScope, $controller, AppResource, centrisNotify, $routeParams, ProductDlg, $location, $translate) {
 		scope = $rootScope.$new();
 
 		routeParams = $routeParams;
@@ -52,30 +70,28 @@ beforeEach(module("project3App"));
 			$scope        : scope,
 			centrisNotify : centrisnotify,
 			AppResource   : appResource,
-			ProductDlg    : productDlg,
-			$routeParams  : routeParams,
-			$location     : location
+			ProductDlg    : mockProductDlg,
+			$routeParams  : mockRouteParams,
+			$location     : location,
+			$translate    : mockTranslate
 		});
 
 		spyOn(scope, "addProduct");
 		spyOn(scope, "editProduct");
 		spyOn(scope, "changeLanguage");
+	//	spyOn(mockTranslate, "use");
+		//spyOn(mockProductDlg, "show");
 		//spyOn(appResource, "getSellerDetails")
 		spyOn(centrisNotify, "success");
 		spyOn(centrisNotify, "error");
-		//spyOn(centrisnotify, "success");
-		//spyOn(sellerDlg, "show");
 	}));
 
 	describe("on load up", function() {
 		it("should get all seller details and seller products", function() {
-
-			//expect(scope.userID).toEqual(1);
 			expect(scope.sellerProducts).toBeDefined();
 		  expect(scope.sellerTop10Products).toBeDefined();
-
-			//expect(scope.sellerDetails).toBeDefined();
-			//expect(scope.sellers.length).toEqual(5);
+			expect(scope.userID).toEqual(1);
+			expect(scope.sellerDetails).toBeDefined();
 		});
 	});
 
@@ -86,6 +102,7 @@ beforeEach(module("project3App"));
 
 		it("should add a user", function() {
 			expect(scope.addProduct).toHaveBeenCalledWith(successObj);
+		//	expect(mockProductDlg.show).toHaveBeenCalled();
 			//expect(mockCentrisNotify.success).toHaveBeenCalled();
 
 		});
@@ -111,6 +128,7 @@ beforeEach(module("project3App"));
 
 		it("should change when requested", function() {
 				expect(scope.changeLanguage).toHaveBeenCalled();
+				//expect(mockTranslate.use).toHaveBeenCalled();
 			//	expect(translate.use).toHaveBeenCalled();
 		});
 	});

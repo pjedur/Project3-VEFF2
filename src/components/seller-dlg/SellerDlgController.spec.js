@@ -1,42 +1,71 @@
-/*"use strict";
-xdescribe("myCustom directive", function() {
-  var template = "<my-custom-directive ng-model='smu' allow-edit='allow' ></my-custom-directive>";
+"use strict";
+describe("Seller dialog factory", function() {
+
   var scope;
-  var compile;
-  var element;
-  var backend;
-  xbeforeEach(module("project3App"));
-  xbeforeEach(inject(function($rootScope, $compile, $httpBackend) {
+  var controller;
+
+  var mockCentrisNotify = {
+    success: function(string) {
+      return {
+        result: {}
+      }
+    },
+    error: function(string) {
+      return {
+        result: {}
+      }
+    }
+  };
+
+  var mockParam = {
+    name : "asda",
+    price : "232",
+    quantityInStock : "23",
+    quantitySold: "241",
+    imagePath: "sds"
+  }
+
+  beforeEach(module("project3App"));
+  beforeEach(inject(function($rootScope, $controller, ProductDlg, centrisNotify) {
     scope = $rootScope.$new();
-    compile = $compile;
-    backend = $httpBackend;
-    // We must declare the scope properties, they can be changed in each
-    // describe block before we compile the directive. They don't need
-    // to have a value however.
-    scope.smu = undefined
-    scope.allow = false;
-    // Doesn't really matter what the HTML looks like which is returned
-    // when querying for the template...
-    $httpBackend.expectGET("path/to/directive/template.html").respond("<div></div>");
+    controller = $controller("ProductDlgController", {
+      $scope: scope,
+      modalParam: mockParam,
+      centrisNotify: mockCentrisNotify
+    });
+
+    spyOn(scope, "onOk");
+    spyOn(scope, "onCancel");
+    scope.seller = mockParam;
   }));
 
-  xdescribe("when editing", function() {
-    xit("should initialize properly", function() {
-    // Compile the HTML fragment into our directive object:
-    element = compile(template)(scope);
-    // Since the directive uses a templateUrl, we must flush
-    // the HTTP pipeline to ensure the template is properly loaded:
-    backend.flush();
-    // Now we can start examining the scope of our directive.
-    // Since it uses isolated scope, any changes it makes
-    // to the scope object only affect its own scope,
-    // which we must access explicitly:
-    var isolatedScope = element.isolateScope();
-    // Use regular expect() methods to check on the contents of
-    // the directive scope, i.e. by using "isolatedScope" instead
-    // of "scope".
-    expect(scope.whatever).not.toBeDefined();
+  describe("on load up", function() {
+    it("should initialize properly", function(done) {
+      expect(scope.seller).toBeDefined();
+      expect(scope.seller).toEqual(mockParam);
+      done();
     });
   });
-  // Etc., more describe() blocks, and more it() blocks as well...
-}); */
+
+  describe("when submitting", function() {
+   beforeEach(function() {
+      scope.onOk();
+    });
+
+    it("should call onOk function", function() {
+      expect(scope.onOk).toHaveBeenCalled();
+      expect(scope.seller).toBeDefined();
+    });
+  });
+
+  describe("when cancelling", function() {
+    beforeEach(function() {
+      scope.onCancel();
+    });
+
+    it("should call function onCancel", function() {
+      expect(scope.onCancel).toHaveBeenCalled();
+      expect(scope.seller).toBeDefined();
+    });
+  });
+});
